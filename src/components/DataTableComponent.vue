@@ -22,7 +22,12 @@
             ></v-text-field>
           </v-col>
           <v-col cols="12" lg="2" md="4" sm="12" v-if="isBtnNeeded">
-            <v-btn class="text-white bg-primary" prepend-icon="mdi-plus" @click="addData">{{ btnTitle }}</v-btn>
+            <v-btn
+              class="text-white bg-primary"
+              prepend-icon="mdi-plus"
+              @click="addData"
+              >{{ btnTitle }}</v-btn
+            >
           </v-col>
         </v-row>
       </v-card-text>
@@ -34,9 +39,11 @@
         :hover="true"
         :headers="headers"
       >
-      <template v-slot:[`item.IS_PERSON_MINOR`]="{ item }">
-        <v-chip variant="solo" class="bg-green text-white"  size="small">{{ item.IS_PERSON_MINOR }}</v-chip>
-      </template>
+        <template v-slot:[`item.IS_PERSON_MINOR`]="{ item }">
+          <v-chip variant="solo" class="bg-green text-white" size="small">{{
+            item.IS_PERSON_MINOR
+          }}</v-chip>
+        </template>
       </v-data-table>
     </v-card-text>
   </v-card>
@@ -46,7 +53,7 @@ export default {
   data() {
     return {
       search: "",
-      filter: ""
+      filter: "",
     };
   },
   props: {
@@ -64,7 +71,7 @@ export default {
     },
     itemsPerPage: {
       type: Number,
-      default: 5
+      default: 5,
     },
     itemsPerPageOptions: {
       type: Object,
@@ -74,7 +81,7 @@ export default {
         { value: 25, title: "25" },
         { value: 50, title: "50" },
         { value: -1, title: "$vuetify.dataFooter.itemsPerPageAll" },
-      ]
+      ],
     },
     isFilterNeeded: {
       type: Boolean,
@@ -82,16 +89,16 @@ export default {
     },
     filterOptions: {
       type: Object,
-      default: []
+      default: [],
     },
     btnTitle: {
       type: String,
-      default: "ADD"
+      default: "ADD",
     },
     isBtnNeeded: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   watch: {
     filter(val) {
@@ -100,8 +107,8 @@ export default {
   },
   methods: {
     addData() {
-      this.$emit("updateData", 'add');
-    }
-  }
+      this.$emit("updateData", "add");
+    },
+  },
 };
 </script>
