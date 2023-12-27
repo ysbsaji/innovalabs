@@ -24,6 +24,11 @@ const routes = [
         name: 'FormTemplate',
         component: () => import('@/views/FormTemplate.vue')
       },
+      {
+        path: 'dynamic-form',
+        name: 'DynamicForm',
+        component: () => import('@/views/DynamicForm.vue')
+      },
     ],
   },
 ]

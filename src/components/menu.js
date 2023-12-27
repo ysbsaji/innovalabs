@@ -11,9 +11,14 @@ const menusList = [
   },
   {
       title: "Form Template",
-      path: "/form-template",
+      path: "/dynamic-form",
       icon: "mdi-clipboard-text-outline"
   },
+  {
+    title: "Form Template( OLD )",
+    path: "/form-template",
+    icon: "mdi-clipboard-text-outline"
+},
 ];
 
 export default menusList

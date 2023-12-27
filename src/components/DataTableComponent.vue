@@ -105,6 +105,19 @@ export default {
       val && this.$emit("updateData", val);
     },
   },
+  computed: {
+    userslist() {
+      let result = []
+      let keys = []
+      keys = Object.keys(users[0])
+      result =  users.filter(user => {
+       keys.forEach(key => {
+          if (user[key].includes(this.search)) return user
+        })
+      })
+      return result
+    }
+  },
   methods: {
     addData() {
       this.$emit("updateData", "add");
