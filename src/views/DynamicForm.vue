@@ -9,6 +9,7 @@
           :showError="showError"
         ></component>
       </div>
+      <button type="reset" @click="clearData" class="mx-6 bg-bg text-black">Reset</button>
       <button type="submit">Submit</button>
     </form>
   </div>
@@ -77,6 +78,10 @@ export default {
       if (!result) this.showError = true;
       return result;
     },
+    clearData() {
+      this.showError = false
+      this.formData = {}
+    }
   },
 };
 </script>
